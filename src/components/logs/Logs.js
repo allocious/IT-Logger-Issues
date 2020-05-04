@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import LogItem from './LogItem';
 import Preloader from '../layout/Preloader';
-import { setLoading } from '../../actions/logActions';
 import PropTypes from 'prop-types';
 import { getLogs } from '../../actions/logActions';
 
 const Logs = ({ log: { logs, loading }, getLogs }) => {
   useEffect(() => {
     getLogs();
-    //eslint-disable-next-line
+    // eslint-disable-next-line
   }, []);
 
   if (loading || logs === null) {

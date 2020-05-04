@@ -27,7 +27,7 @@ const LogItem = ({ log, deleteLog, setCurrent }) => {
         <span className='grey-text'>
           <span className='black-text'>ID #{log.id} </span> last updated by{' '}
           <span className='black-text'>{log.tech} </span> on{' '}
-          <Moment parse='YYYY-MM-DDTHH:mm:ss' format='MMMM Do, YYYY, h:mm a'>
+          <Moment parse='YYYY-MM-DDTHH:mm:ss' format='MMMM Do, YYYY, h:mm:ss a'>
             {log.date}
           </Moment>
         </span>
@@ -41,8 +41,8 @@ const LogItem = ({ log, deleteLog, setCurrent }) => {
 
 LogItem.propTypes = {
   log: PropTypes.object.isRequired,
-  deleteLog: PropTypes.object.isRequired,
-  setCurrent: PropTypes.object.isRequired,
+  deleteLog: PropTypes.func.isRequired,
+  setCurrent: PropTypes.func.isRequired
 };
 
 export default connect(null, { deleteLog, setCurrent })(LogItem);
